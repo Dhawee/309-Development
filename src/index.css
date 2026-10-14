@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #FFFFFF;
+    color: #1E293B;
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Poppins', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  /* Ensure images don't overflow on mobile */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Prevent horizontal overflow */
+  body, #root {
+    overflow-x: hidden;
+  }
+}
+
+/* Primary Button in Blue */
+.btn-blue {
+  background-color: #101D32;
+  color: #FFFFFF;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-blue:hover {
+  background-color: #182A45;
+  box-shadow: 0 8px 20px -2px rgba(16, 29, 50, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-outline-blue {
+  border: 1.5px solid #101D32;
+  color: #101D32;
+  background-color: #FFFFFF;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.btn-outline-blue:hover {
+  background-color: #101D32;
+  color: #FFFFFF;
+  box-shadow: 0 6px 16px -2px rgba(16, 29, 50, 0.2);
+}
+
+.btn-white {
+  background-color: #FFFFFF;
+  color: #101D32;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.btn-white:hover {
+  background-color: #F8FAFC;
+  box-shadow: 0 6px 20px -2px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Card Styling */
+.card-clean {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 4px 20px -2px rgba(16, 29, 50, 0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-clean:hover {
+  border-color: #CBD5E1;
+  box-shadow: 0 12px 30px -4px rgba(16, 29, 50, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Rose accent rule */
+.accent-rule {
+  width: 48px;
+  height: 3px;
+  background-color: #ECB7B5;
+  border-radius: 2px;
+}
+
+/* Fade-in animation for mobile drawer */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FFFFFF;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #101D32;
+}
+
+/* Responsive touch targets for mobile */
+@media (max-width: 640px) {
+  button, a {
+    min-height: 44px;
+  }
+  
+  /* Ensure full-width containers on small screens */
+  .max-w-7xl {
+    width: 100%;
+  }
+}
+
+/* Smooth transitions for navbar */
+header {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+}
+
+/* Video background containment */
+video {
+  object-fit: cover;
+}
