@@ -36,7 +36,7 @@ export function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen bg-[#FAF9F6] text-[#303641] font-sans">
+      <div className="flex flex-col min-h-screen bg-white text-slate-900 font-sans selection:bg-[#ECB7B5]/30 selection:text-[#101D32]">
         <Navbar onOpenEnquiry={() => setIsGlobalEnquiryOpen(true)} />
         <main className="flex-grow">
           <Routes>

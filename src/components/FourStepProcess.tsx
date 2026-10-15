@@ -6,56 +6,50 @@ export const FourStepProcess: React.FC = () => {
   const stepIcons = [FileCheck, CreditCard, Scroll, Award];
 
   return (
-    <section className="py-20 bg-[#101D32] text-white relative overflow-hidden" id="investment-process">
-      {/* Background Architectural Accent lines */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
-        <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full border-[40px] border-white"></div>
-        <div className="absolute bottom-0 left-1/4 w-80 h-80 rounded-full border-[20px] border-[#ECB7B5]"></div>
-      </div>
-
+    <section className="py-24 sm:py-32 bg-white text-slate-900 border-b border-slate-100 relative overflow-hidden" id="investment-process">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-sm bg-[#15243C] text-[#ECB7B5] text-xs font-semibold tracking-widest uppercase mb-3 border border-[#23395B] font-mono">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#ECB7B5]"></span>
+        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-xs font-semibold tracking-widest uppercase mb-4 font-mono">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#101D32]"></span>
             <span>Structured Acquisition Roadmap</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-heading font-extrabold text-slate-950 tracking-tight leading-tight">
             The 4-Step Investment Pathway
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
             From initial enquiry to physical parcel demarcation, every stage at 309 Development Ltd. is protected by verified legal documentation and corporate accountability.
           </p>
         </div>
 
         {/* 4 Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {VAR_PROJECT.processSteps.map((step, idx) => {
             const IconComponent = stepIcons[idx] || FileCheck;
             return (
               <div
                 key={step.step}
-                className="bg-[#15243C] border border-[#23395B] rounded-sm p-6 relative group hover:border-[#ECB7B5] transition-all duration-300 flex flex-col justify-between"
+                className="bg-white border border-slate-200/90 rounded-2xl p-8 relative group hover:border-[#101D32] hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-5">
-                    <span className="font-mono text-2xl font-bold text-[#ECB7B5]">
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="font-mono text-3xl font-extrabold text-[#101D32]">
                       {step.step}
                     </span>
-                    <div className="p-2.5 rounded-sm bg-[#101D32] border border-[#23395B] text-[#ECB7B5] group-hover:scale-105 transition-transform">
+                    <div className="p-3 rounded-xl bg-slate-100 text-[#101D32] border border-slate-200 group-hover:scale-105 transition-transform">
                       <IconComponent className="h-5 w-5" />
                     </div>
                   </div>
-                  <h3 className="text-lg font-heading font-bold text-white mb-2">
+                  <h3 className="text-lg sm:text-xl font-heading font-bold text-slate-900 mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     {step.description}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[#23395B]/80 flex items-center text-[11px] text-[#ECB7B5] font-semibold">
+                <div className="mt-8 pt-4 border-t border-slate-100 flex items-center text-xs font-semibold text-[#101D32]">
                   <span>Standard Process Step</span>
-                  <ArrowRight className="h-3 w-3 ml-1 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="h-3 w-3 ml-1.5 group-hover:translate-x-1.5 transition-transform" />
                 </div>
               </div>
             );
@@ -63,8 +57,8 @@ export const FourStepProcess: React.FC = () => {
         </div>
 
         {/* Reassurance Callout */}
-        <div className="mt-12 text-center">
-          <p className="text-xs sm:text-sm text-slate-400">
+        <div className="mt-14 text-center">
+          <p className="text-sm text-slate-500 max-w-xl mx-auto">
             Need guidance navigating terms or payment schedules? Our 309 Ambassadors and advisory directors are ready to assist.
           </p>
         </div>

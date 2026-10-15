@@ -6,18 +6,18 @@ import { COMPANY_INFO } from '../data/projectData';
 export const AboutPage: React.FC = () => {
   return (
     <div className="pt-20 bg-white">
-      {/* Header Banner */}
-      <section className="bg-[#101D32] text-white py-16 sm:py-24 border-b border-[#23395B]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Header Banner (Midnight Blue Gradient — Left to Right, White Text) */}
+      <section className="bg-[#101D32] text-white py-20 sm:py-28 border-b border-[#1D3252] relative overflow-hidden">
+        {/* Left-to-Right Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#101D32] via-[#101D32]/90 to-[#1D3A5C]/70" />
+        {/* Subtle radial accent for depth */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,255,255,0.04)_0%,_transparent_60%)]" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center space-x-2 text-xs font-semibold tracking-widest uppercase text-[#ECB7B5] font-mono">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#ECB7B5]"></span>
-              <span>Corporate Overview</span>
-            </div>
-            <h1 className="text-4xl sm:text-5xl font-heading font-extrabold text-white tracking-tight">
+            <h1 className="text-4xl sm:text-5xl font-medium text-white tracking-tight">
               About 309 Development Ltd.
             </h1>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
+            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal">
               {COMPANY_INFO.description}
             </p>
           </div>

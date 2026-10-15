@@ -36,47 +36,44 @@ export const ProjectDetailPage: React.FC = () => {
 
   return (
     <div className="pt-24 pb-20 bg-white">
-      {/* 1. PROJECT HERO (BLUE BACKGROUND) */}
-      <section className="bg-[#101D32] text-white py-16 sm:py-24 relative overflow-hidden">
-        {/* Background Overlay */}
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-25 mix-blend-luminosity"
-          style={{ backgroundImage: `url('/assets/design_1.png')` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#101D32] via-[#101D32]/85 to-transparent" />
-
+      {/* 1. PROJECT HERO (MIDNIGHT BLUE GRADIENT — LEFT TO RIGHT) */}
+      <section className="bg-[#101D32] text-white py-20 sm:py-28 border-b border-[#1D3252] relative overflow-hidden">
+        {/* Left-to-Right Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#101D32] via-[#101D32]/90 to-[#1D3A5C]/70" />
+        {/* Subtle radial accent for depth */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,255,255,0.04)_0%,_transparent_60%)]" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-4xl space-y-5">
+          <div className="max-w-4xl space-y-6">
             <div className="flex flex-wrap items-center gap-2.5">
-              <span className="px-3 py-1 rounded-sm bg-[#15243C] border border-[#ECB7B5]/60 text-[#ECB7B5] text-xs font-semibold uppercase tracking-wider font-mono">
-                Flagship Real Estate Development
+              <span className="px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-semibold uppercase tracking-wider font-mono">
+                Flagship Development
               </span>
-              <span className="px-3 py-1 rounded-sm bg-[#15243C] text-white border border-[#23395B] text-xs font-mono font-medium">
+              <span className="px-3.5 py-1.5 rounded-full bg-white/10 text-slate-200 border border-white/20 text-xs font-mono font-medium">
                 Status: {VAR_PROJECT.status}
               </span>
-              <span className="px-3 py-1 rounded-sm bg-[#15243C] text-slate-300 border border-[#23395B] text-xs font-mono">
+              <span className="px-3.5 py-1.5 rounded-full bg-white/10 text-slate-200 border border-white/20 text-xs font-mono">
                 Title: {VAR_PROJECT.titleStatus}
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-white tracking-tight leading-tight">
-              Verdant Acres & Resort (VAR)
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium text-white tracking-tight leading-tight">
+              Verdant Acres &amp; Resort (VAR)
             </h1>
 
-            <div className="flex items-center space-x-2 text-sm sm:text-base text-slate-300">
-              <MapPin className="h-5 w-5 text-[#ECB7B5] shrink-0" />
+            <div className="flex items-center space-x-2 text-sm sm:text-base text-slate-200">
+              <MapPin className="h-4 w-4 text-white shrink-0" />
               <span>{VAR_PROJECT.location}</span>
             </div>
 
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-3xl">
+            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-3xl">
               {VAR_PROJECT.subtitle} Master-planned to transform fertile Ogun State terrain into high-yield commercial agriculture (Verdant Vine) and scenic hospitality eco-tourism (Verdant Leisure).
             </p>
 
-            {/* Blue Buttons */}
+            {/* Action Buttons */}
             <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <button
                 onClick={() => handleOpenEnquiry()}
-                className="px-7 py-3.5 rounded-sm bg-[#182A45] hover:bg-[#1D3252] border border-[#ECB7B5]/60 text-white text-sm font-semibold tracking-wide transition-all shadow-md flex items-center justify-center space-x-2 cursor-pointer"
+                className="px-7 py-3.5 rounded-full bg-[#101D32] hover:bg-[#182A45] text-white text-sm font-medium tracking-wide transition-all shadow-md flex items-center justify-center space-x-2 cursor-pointer"
               >
                 <Calendar className="h-4 w-4 text-[#ECB7B5]" />
                 <span>Book Site Inspection</span>
@@ -85,7 +82,7 @@ export const ProjectDetailPage: React.FC = () => {
                 href={whatsappInspectionUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3.5 rounded-sm bg-white/10 hover:bg-white/20 border border-white/25 text-white text-sm font-semibold tracking-wide transition-colors flex items-center justify-center space-x-2"
+                className="px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/25 text-white text-sm font-medium tracking-wide transition-colors flex items-center justify-center space-x-2 backdrop-blur-sm"
               >
                 <MessageSquare className="h-4 w-4 text-[#25D366]" />
                 <span>WhatsApp Desk</span>
@@ -93,9 +90,9 @@ export const ProjectDetailPage: React.FC = () => {
               <a
                 href={VAR_PROJECT.brochurePdfUrl}
                 download
-                className="px-6 py-3.5 rounded-sm bg-white/10 hover:bg-white/20 text-white text-sm font-semibold tracking-wide transition-colors flex items-center justify-center space-x-2"
+                className="px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/25 text-white text-sm font-medium tracking-wide transition-colors flex items-center justify-center space-x-2 backdrop-blur-sm"
               >
-                <Download className="h-4 w-4 text-[#ECB7B5]" />
+                <Download className="h-4 w-4 text-slate-200" />
                 <span>Download Brochure (PDF)</span>
               </a>
             </div>

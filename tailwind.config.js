@@ -38,8 +38,8 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', '"Inter"', 'system-ui', 'sans-serif'],
-        heading: ['"Poppins"', '"Plus Jakarta Sans"', 'sans-serif'],
+        sans: ['"Poppins"', 'sans-serif'],
+        heading: ['"Poppins"', 'sans-serif'],
         display: ['"Poppins"', 'sans-serif'],
       },
       boxShadow: {

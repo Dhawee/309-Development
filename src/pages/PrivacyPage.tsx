@@ -5,13 +5,17 @@ import { COMPANY_INFO } from '../data/projectData';
 export const PrivacyPage: React.FC = () => {
   return (
     <div className="pt-24 pb-20 bg-white">
-      <section className="bg-[#101D32] text-white py-16 border-b border-[#23395B]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="inline-flex items-center space-x-2 text-xs font-semibold tracking-widest uppercase text-[#ECB7B5] mb-3 font-mono">
-            <Lock className="h-3.5 w-3.5" />
+      <section className="bg-[#101D32] text-white py-16 sm:py-24 border-b border-[#1D3252] relative overflow-hidden">
+        {/* Left-to-Right Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#101D32] via-[#101D32]/90 to-[#1D3A5C]/70" />
+        {/* Subtle radial accent for depth */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,255,255,0.04)_0%,_transparent_60%)]" />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="inline-flex items-center space-x-2 text-xs font-semibold tracking-widest uppercase text-slate-300 mb-3 font-mono">
+            <Lock className="h-3.5 w-3.5 text-white" />
             <span>Corporate Governance & Data Protection</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-heading font-extrabold text-white">
+          <h1 className="text-3xl sm:text-4xl font-medium text-white">
             Privacy Policy & Data Notice
           </h1>
           <p className="mt-2 text-xs sm:text-sm text-slate-300">

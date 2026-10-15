@@ -69,18 +69,18 @@ export const ContactPage: React.FC = () => {
 
   return (
     <div className="pt-24 pb-20 bg-white">
-      {/* Header Banner (Blue Background) */}
-      <section className="bg-[#101D32] text-white py-16 sm:py-20 border-b border-[#23395B]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Header Banner (Midnight Blue Gradient — Left to Right, White Text) */}
+      <section className="bg-[#101D32] text-white py-20 sm:py-28 border-b border-[#1D3252] relative overflow-hidden">
+        {/* Left-to-Right Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#101D32] via-[#101D32]/90 to-[#1D3A5C]/70" />
+        {/* Subtle radial accent for depth */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,255,255,0.04)_0%,_transparent_60%)]" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center space-x-2 text-xs font-semibold tracking-widest uppercase text-[#ECB7B5] font-mono">
-              <MessageSquare className="h-4 w-4 text-[#ECB7B5]" />
-              <span>Direct Liaison & Inquiries</span>
-            </div>
-            <h1 className="text-4xl sm:text-5xl font-heading font-extrabold text-white tracking-tight">
+            <h1 className="text-4xl sm:text-5xl font-medium text-white tracking-tight">
               Contact 309 Development Ltd.
             </h1>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
+            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal">
               Connect directly with our investment advisory desk for parcel allocations, site inspections at Alabata, Abeokuta, or formal corporate documentation.
             </p>
           </div>
@@ -206,10 +206,7 @@ export const ContactPage: React.FC = () => {
                 ) : (
                   <div>
                     <div className="mb-6">
-                      <span className="text-[11px] font-mono uppercase tracking-widest text-[#101D32] font-bold bg-[#ECB7B5]/25 px-2.5 py-1 rounded-sm border border-[#ECB7B5]/50">
-                        Official Inquiry Form
-                      </span>
-                      <h3 className="text-2xl font-heading font-bold text-[#101D32] mt-2">
+                      <h3 className="text-2xl font-heading font-bold text-[#101D32]">
                         Send Us an Enquiry or Book an Inspection
                       </h3>
                       <p className="text-xs sm:text-sm text-slate-500 mt-1">

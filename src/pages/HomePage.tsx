@@ -35,114 +35,84 @@ export const HomePage: React.FC = () => {
 
   return (
     <div className="bg-white">
-      {/* ─── 1. CINEMATIC VIDEO HERO ─── */}
-      <section className="relative bg-[#101D32] text-white overflow-hidden min-h-screen flex items-center pt-20">
-        {/* Video Background */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/assets/design_3.png"
-        >
-          {/* Farmland video — users can replace this src with a real video file */}
-          <source src="/assets/farmland.mp4" type="video/mp4" />
-        </video>
+      {/* ─── 1. MIDNIGHT BLUE FADED GRADIENT HERO (STILL SHOWING PICTURE, WHITE TEXT) ─── */}
+      <section className="relative min-h-[85vh] sm:min-h-[88vh] flex items-center pt-28 pb-20 overflow-hidden bg-[#101D32] border-b border-[#1D3252]">
+        {/* Resort Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/assets/hero_resort.jpg"
+            alt="Luxury Entertainment Complex & Resort"
+            className="w-full h-full object-cover object-center"
+          />
+          {/* Midnight Blue #101D32 Faded Gradient Overlay still showing the picture */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#101D32]/92 via-[#101D32]/80 to-[#101D32]/55" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#101D32]/95 via-transparent to-[#101D32]/50" />
+        </div>
 
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#101D32]/95 via-[#101D32]/80 to-[#101D32]/50 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#101D32]/90 via-transparent to-transparent z-10" />
-
-        {/* Fallback background image if no video */}
-        <div
-          className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-20"
-          style={{ backgroundImage: `url('/assets/design_3.png')` }}
-        />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 relative z-20 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-16 sm:py-24">
           <div className="max-w-3xl">
-            {/* Eyebrow */}
-            <div className="inline-flex items-center space-x-2.5 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/90 text-xs font-semibold tracking-[0.15em] uppercase mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#ECB7B5] animate-pulse" />
-              <span>Real Estate & Investment Development</span>
-            </div>
-
-            {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-white tracking-tight leading-[1.1] mb-6">
+            {/* Main Headline in white with reduced boldness */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium text-white tracking-tight leading-[1.18] mb-6">
               Building Wealth Through{' '}
-              <span className="text-[#ECB7B5]">
+              <span className="font-semibold text-white">
                 Strategic Real Estate.
               </span>
             </h1>
 
-            {/* Supporting Copy */}
-            <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed mb-8">
-              309 Development Ltd. structures high-value property and investment products designed to turn land into bankable, lasting wealth for forward-looking individuals and institutions.
+            {/* Supporting Copy with generous line height and whitespace in white */}
+            <p className="text-base sm:text-lg lg:text-xl text-slate-200 leading-relaxed font-normal mb-10 max-w-2xl">
+              309 Development Ltd. structures premium, legally verified real estate and agricultural land assets designed for modern living, capital preservation, and lasting generational wealth.
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <Link
                 to="/projects"
-                className="px-7 py-3.5 rounded-sm bg-white text-[#101D32] text-sm font-bold tracking-wide transition-all shadow-md flex items-center justify-center space-x-2 hover:bg-slate-100 transform hover:-translate-y-0.5"
-                id="hero-explore-projects-cta"
+                className="px-8 py-4 rounded-full bg-white hover:bg-slate-100 text-[#101D32] text-sm font-semibold tracking-wide transition-all shadow-md flex items-center justify-center space-x-2 transform hover:-translate-y-0.5"
+                id="hero-explore-properties-cta"
               >
-                <span>Explore Our Projects</span>
-                <ArrowRight className="h-4 w-4" />
+                <span>Explore Our Properties</span>
+                <ArrowRight className="h-4 w-4 text-[#101D32]" />
               </Link>
 
               <button
                 onClick={() => handleOpenEnquiry()}
-                className="px-7 py-3.5 rounded-sm bg-white/10 hover:bg-white/20 text-white border border-white/30 text-sm font-semibold tracking-wide transition-all flex items-center justify-center space-x-2 cursor-pointer"
-                id="hero-speak-team-cta"
+                className="px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/30 text-sm font-medium tracking-wide transition-all shadow-sm flex items-center justify-center space-x-2 cursor-pointer backdrop-blur-sm"
+                id="hero-book-inspection-cta"
               >
-                <PhoneCall className="h-4 w-4 text-[#ECB7B5]" />
-                <span>Speak to Our Team</span>
+                <PhoneCall className="h-4 w-4 text-white" />
+                <span>Book Inspection Tour</span>
               </button>
-            </div>
-
-            {/* Mini Stats */}
-            <div className="grid grid-cols-3 gap-4 sm:gap-8 border-t border-white/20 pt-8">
-              <div>
-                <div className="text-white font-bold font-heading text-xl sm:text-2xl">Verified</div>
-                <div className="text-slate-400 text-xs mt-0.5">C of O in View</div>
-              </div>
-              <div>
-                <div className="text-white font-bold font-heading text-xl sm:text-2xl">Prime</div>
-                <div className="text-slate-400 text-xs mt-0.5">Growth Corridors</div>
-              </div>
-              <div>
-                <div className="text-white font-bold font-heading text-xl sm:text-2xl">Multi</div>
-                <div className="text-slate-400 text-xs mt-0.5">Product Pipeline</div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ─── 2. BRAND TRUST BAR ─── */}
-      <section className="bg-white border-b border-slate-100 py-5">
+      {/* ─── 2. BRAND TRUST SECTION (BOXED IN A STRAIGHT ROW) ─── */}
+      <section className="bg-white py-10 sm:py-14 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-12 text-sm font-semibold text-slate-600">
-            <div className="flex items-center space-x-2">
-              <ShieldCheck className="h-4 w-4 text-[#101D32]" />
-              <span>Verified Titles</span>
-            </div>
-            <span className="hidden sm:block text-slate-200">•</span>
-            <div className="flex items-center space-x-2">
-              <Building className="h-4 w-4 text-[#101D32]" />
-              <span>Registered Developer</span>
-            </div>
-            <span className="hidden sm:block text-slate-200">•</span>
-            <div className="flex items-center space-x-2">
-              <TrendingUp className="h-4 w-4 text-[#101D32]" />
-              <span>High-Value Opportunities</span>
-            </div>
-            <span className="hidden sm:block text-slate-200">•</span>
-            <div className="flex items-center space-x-2">
-              <Star className="h-4 w-4 text-[#101D32]" />
-              <span>Multiple Product Portfolio</span>
+          <div className="bg-white border border-slate-200/90 rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
+              <div className="flex items-center space-x-3 sm:px-4 first:pl-0">
+                <span className="w-2 h-2 rounded-full bg-[#101D32] shrink-0" />
+                <ShieldCheck className="h-5 w-5 text-[#101D32] shrink-0" />
+                <span className="text-sm font-semibold text-slate-800">Verified Titles (C of O in view)</span>
+              </div>
+              <div className="flex items-center space-x-3 sm:px-4 pt-4 sm:pt-0">
+                <span className="w-2 h-2 rounded-full bg-[#101D32] shrink-0" />
+                <Building className="h-5 w-5 text-[#101D32] shrink-0" />
+                <span className="text-sm font-semibold text-slate-800">Registered Corporate Developer</span>
+              </div>
+              <div className="flex items-center space-x-3 sm:px-4 pt-4 sm:pt-0">
+                <span className="w-2 h-2 rounded-full bg-[#101D32] shrink-0" />
+                <TrendingUp className="h-5 w-5 text-[#101D32] shrink-0" />
+                <span className="text-sm font-semibold text-slate-800">High-Yield Growth Corridors</span>
+              </div>
+              <div className="flex items-center space-x-3 sm:px-4 pt-4 sm:pt-0">
+                <span className="w-2 h-2 rounded-full bg-[#101D32] shrink-0" />
+                <Star className="h-5 w-5 text-[#101D32] shrink-0" />
+                <span className="text-sm font-semibold text-slate-800">Guided Physical Site Inspections</span>
+              </div>
             </div>
           </div>
         </div>
@@ -430,39 +400,75 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* ─── 8. FAQ ─── */}
-      <FAQAccordion />
-
-      {/* ─── 9. FINAL CTA ─── */}
-      <section className="py-20 sm:py-24 bg-[#101D32] text-white relative">
+      {/* ─── 8. GUIDED INSPECTION TOUR (EDALA & CITYLINK PATTERN) ─── */}
+      <section className="py-24 sm:py-32 bg-slate-50/70 border-y border-slate-100" id="inspection-tour">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-semibold tracking-widest uppercase border border-white/20">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#ECB7B5]"></span>
-            <span>Ready to Invest?</span>
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white text-slate-800 text-xs font-semibold tracking-widest uppercase border border-slate-200 shadow-sm font-mono">
+            <span className="w-2 h-2 rounded-full bg-[#101D32]"></span>
+            <span>Site Visits & Ground Verification</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-heading font-extrabold text-white tracking-tight">
-            Schedule Your Inspection or Request an Allocation Advisory Today.
+          <h2 className="text-3xl sm:text-5xl font-medium text-slate-950 tracking-tight leading-tight">
+            Join Us for a Guided Site Inspection
           </h2>
-          <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Our investment specialists are on ground in Lagos and Abeokuta to provide guided inspections, coordinate charts and contract of sale terms.
+          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
+            Make an informed decision about your real estate purchase by scheduling an inspection with our development team today. We'll guide you through perimeter coordinates, road access, and allocation plans to ensure total confidence.
           </p>
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={() => handleOpenEnquiry()}
-              className="w-full sm:w-auto px-8 py-3.5 rounded-sm bg-white text-[#101D32] text-sm font-bold tracking-wide transition-all shadow-md flex items-center justify-center space-x-2 cursor-pointer hover:bg-slate-100"
+              className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#101D32] hover:bg-[#182A45] text-white text-sm font-medium tracking-wide transition-all shadow-md flex items-center justify-center space-x-2 cursor-pointer transform hover:-translate-y-0.5"
             >
-              <span>Enquire Now / Book Inspection</span>
-              <ArrowUpRight className="h-4 w-4" />
+              <span>Book Guided Inspection</span>
+              <ArrowRight className="h-4 w-4 text-[#ECB7B5]" />
             </button>
             <a
               href={whatsappGeneralUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-8 py-3.5 rounded-sm bg-white/10 hover:bg-white/20 border border-white/20 text-white text-sm font-semibold tracking-wide transition-colors flex items-center justify-center space-x-2"
+              className="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-slate-100 border border-slate-300 text-slate-800 text-sm font-medium tracking-wide transition-colors flex items-center justify-center space-x-2 shadow-sm"
             >
               <MessageSquare className="h-4 w-4 text-[#25D366]" />
-              <span>Direct WhatsApp Discussion</span>
+              <span>Inspection WhatsApp Desk</span>
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 9. FAQ ─── */}
+      <FAQAccordion />
+
+      {/* ─── 10. FINAL CTA (WHITE BACKGROUND & AMPLE WHITESPACE) ─── */}
+      <section className="py-24 sm:py-32 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-slate-50 border border-slate-200/90 rounded-3xl p-10 sm:p-16 text-center space-y-6 shadow-sm">
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white text-slate-800 text-xs font-semibold tracking-widest uppercase border border-slate-200 font-mono">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#101D32]"></span>
+              <span>Ready to Invest?</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-medium text-slate-950 tracking-tight leading-tight">
+              Request Your Allocation Advisory Today.
+            </h2>
+            <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
+              Our investment specialists are on ground in Lagos and Abeokuta to provide guided physical inspections, coordinates, and deed of assignment counsel.
+            </p>
+            <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <button
+                onClick={() => handleOpenEnquiry()}
+                className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#101D32] hover:bg-[#182A45] text-white text-sm font-medium tracking-wide transition-all shadow-md flex items-center justify-center space-x-2 cursor-pointer transform hover:-translate-y-0.5"
+              >
+                <span>Enquire Now / Book Inspection</span>
+                <ArrowUpRight className="h-4 w-4 text-[#ECB7B5]" />
+              </button>
+              <a
+                href={whatsappGeneralUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-slate-100 border border-slate-300 text-slate-800 text-sm font-medium tracking-wide transition-colors flex items-center justify-center space-x-2 shadow-sm"
+              >
+                <MessageSquare className="h-4 w-4 text-[#25D366]" />
+                <span>Direct WhatsApp Discussion</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>

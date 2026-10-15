@@ -72,18 +72,18 @@ export const AmbassadorsPage: React.FC = () => {
 
   return (
     <div className="pt-24 pb-20 bg-white">
-      {/* Header (Blue Background) */}
-      <section className="bg-[#101D32] text-white py-16 sm:py-20 border-b border-[#23395B]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Header (Midnight Blue Gradient — Left to Right, White Text) */}
+      <section className="bg-[#101D32] text-white py-20 sm:py-28 border-b border-[#1D3252] relative overflow-hidden">
+        {/* Left-to-Right Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#101D32] via-[#101D32]/90 to-[#1D3A5C]/70" />
+        {/* Subtle radial accent for depth */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,255,255,0.04)_0%,_transparent_60%)]" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center space-x-2 text-xs font-semibold tracking-widest uppercase text-[#ECB7B5] font-mono">
-              <Users className="h-4 w-4 text-[#ECB7B5]" />
-              <span>Realtors & Sales Executives</span>
-            </div>
-            <h1 className="text-4xl sm:text-5xl font-heading font-extrabold text-white tracking-tight">
+            <h1 className="text-4xl sm:text-5xl font-medium text-white tracking-tight">
               309 Ambassadors Network
             </h1>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
+            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal">
               Empowering real estate professionals, consultants and sales executives to represent 309 Development Ltd. with verified opportunities, structured collateral and dependable developer backing.
             </p>
           </div>
