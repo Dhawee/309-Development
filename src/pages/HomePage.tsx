@@ -35,23 +35,29 @@ export const HomePage: React.FC = () => {
 
   return (
     <div className="bg-white">
-      {/* ─── 1. MIDNIGHT BLUE FADED GRADIENT HERO (STILL SHOWING PICTURE, WHITE TEXT) ─── */}
+      {/* ─── 1. HERO: Resort Image + Animated Midnight Blue L→R Gradient + Content ─── */}
       <section className="relative min-h-[85vh] sm:min-h-[88vh] flex items-center pt-28 pb-20 overflow-hidden bg-[#101D32] border-b border-[#1D3252]">
-        {/* Resort Background Image */}
+
+        {/* LAYER 1 — Background Image (lowest) */}
         <div className="absolute inset-0 z-0">
           <img
             src="/assets/hero_resort.jpg"
-            alt="Luxury Entertainment Complex & Resort"
+            alt="Luxury Resort — 309 Development Ltd."
             className="w-full h-full object-cover object-center"
           />
-          {/* Midnight Blue #101D32 Faded Gradient Overlay still showing the picture */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#101D32]/92 via-[#101D32]/80 to-[#101D32]/55" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#101D32]/95 via-transparent to-[#101D32]/50" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-16 sm:py-24">
+        {/* LAYER 2 — Animated gradient overlay: strong Midnight Blue on left, fading right */}
+        {/* pointer-events:none ensures buttons beneath remain fully clickable */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 z-10 hero-gradient-overlay"
+        />
+
+        {/* LAYER 3 — Hero content (highest) */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full py-16 sm:py-24">
           <div className="max-w-3xl">
-            {/* Main Headline in white with reduced boldness */}
+            {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium text-white tracking-tight leading-[1.18] mb-6">
               Building Wealth Through{' '}
               <span className="font-semibold text-white">
@@ -59,7 +65,7 @@ export const HomePage: React.FC = () => {
               </span>
             </h1>
 
-            {/* Supporting Copy with generous line height and whitespace in white */}
+            {/* Supporting copy */}
             <p className="text-base sm:text-lg lg:text-xl text-slate-200 leading-relaxed font-normal mb-10 max-w-2xl">
               309 Development Ltd. structures premium, legally verified real estate and agricultural land assets designed for modern living, capital preservation, and lasting generational wealth.
             </p>

@@ -143,3 +143,106 @@ header {
 video {
   object-fit: cover;
 }
+
+/* ============================================================
+   HERO SECTION — Animated Midnight Blue Gradient Overlay
+   Layer: sits ABOVE the background image (z-10),
+          BELOW the hero content (z-20).
+   pointer-events: none — overlay never blocks clicks/taps.
+   ============================================================ */
+
+/* Keyframe: subtle left-to-right shimmer — shifts the gradient
+   stop positions gently so the fade appears to breathe/flow
+   without moving the image or any content. */
+@keyframes heroGradientShimmer {
+  0%   { opacity: 1;    background-position: 0% 50%; }
+  50%  { opacity: 0.95; background-position: 100% 50%; }
+  100% { opacity: 1;    background-position: 0% 50%; }
+}
+
+@keyframes heroGradientFlow {
+  0% {
+    background: linear-gradient(
+      to right,
+      rgba(16, 29, 50, 0.93) 0%,
+      rgba(16, 29, 50, 0.82) 35%,
+      rgba(16, 29, 50, 0.50) 60%,
+      rgba(16, 29, 50, 0.18) 80%,
+      rgba(16, 29, 50, 0.00) 100%
+    );
+  }
+  50% {
+    background: linear-gradient(
+      to right,
+      rgba(16, 29, 50, 0.96) 0%,
+      rgba(16, 29, 50, 0.85) 40%,
+      rgba(16, 29, 50, 0.55) 65%,
+      rgba(16, 29, 50, 0.20) 82%,
+      rgba(16, 29, 50, 0.00) 100%
+    );
+  }
+  100% {
+    background: linear-gradient(
+      to right,
+      rgba(16, 29, 50, 0.93) 0%,
+      rgba(16, 29, 50, 0.82) 35%,
+      rgba(16, 29, 50, 0.50) 60%,
+      rgba(16, 29, 50, 0.18) 80%,
+      rgba(16, 29, 50, 0.00) 100%
+    );
+  }
+}
+
+.hero-gradient-overlay {
+  /* Base gradient: strong midnight blue → fully transparent */
+  background: linear-gradient(
+    to right,
+    rgba(16, 29, 50, 0.93) 0%,
+    rgba(16, 29, 50, 0.82) 35%,
+    rgba(16, 29, 50, 0.50) 60%,
+    rgba(16, 29, 50, 0.18) 80%,
+    rgba(16, 29, 50, 0.00) 100%
+  );
+
+  /* Overlay sits ABOVE the image, BELOW the content */
+  pointer-events: none;
+
+  /* Slow, smooth, continuous animation — elegant, not distracting */
+  animation: heroGradientFlow 8s ease-in-out infinite;
+}
+
+/* Tablet (≤1024px): slightly stronger gradient so text stays readable */
+@media (max-width: 1024px) {
+  .hero-gradient-overlay {
+    background: linear-gradient(
+      to right,
+      rgba(16, 29, 50, 0.95) 0%,
+      rgba(16, 29, 50, 0.85) 40%,
+      rgba(16, 29, 50, 0.60) 65%,
+      rgba(16, 29, 50, 0.25) 85%,
+      rgba(16, 29, 50, 0.00) 100%
+    );
+    animation: heroGradientFlow 8s ease-in-out infinite;
+  }
+}
+
+/* Mobile (≤640px): full-width strong gradient for maximum contrast */
+@media (max-width: 640px) {
+  .hero-gradient-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(16, 29, 50, 0.88) 0%,
+      rgba(16, 29, 50, 0.80) 50%,
+      rgba(16, 29, 50, 0.70) 100%
+    );
+    animation: none; /* simpler on mobile, no animation needed */
+  }
+}
+
+/* Accessibility: disable animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-gradient-overlay {
+    animation: none !important;
+  }
+}
+
